@@ -52,3 +52,42 @@ class Majalah(KoleksiPerpustakaan):
         print(f"  Thn Terbit    : {self._tahun_terbit}")
         print(f"  Penerbit      : {self._penerbit}")
         print(f"  Edisi         : {self._edisi}")
+
+        
+class Jurnal(KoleksiPerpustakaan):
+    def __init__(self, kode_koleksi, judul, tahun_terbit, penerbit, bidang_studi, impact_factor):
+        super().__init__(kode_koleksi, judul, tahun_terbit, penerbit)
+        self._bidang_studi = bidang_studi
+        self._impact_factor = impact_factor
+
+    def get_jenis(self):
+        return "Jurnal"
+
+    def tampil_info(self):
+        print(f"  Jenis         : {self.get_jenis()}")
+        print(f"  Kode Koleksi  : {self._kode_koleksi}")
+        print(f"  Judul         : {self._judul}")
+        print(f"  Thn Terbit    : {self._tahun_terbit}")
+        print(f"  Penerbit      : {self._penerbit}")
+        print(f"  Bidang Studi  : {self._bidang_studi}")
+        print(f"  Impact Factor : {self._impact_factor}")
+
+class DVDFilmDokumenter(KoleksiPerpustakaan):
+    def __init__(self, kode_koleksi, judul, tahun_terbit, penerbit, jenis_film, bidang_ilmu, durasi):
+        super().__init__(kode_koleksi, judul, tahun_terbit, penerbit)
+        self._jenis_film = jenis_film
+        self._bidang_ilmu = bidang_ilmu
+        self._durasi = durasi
+
+    def get_jenis(self):
+        return "DVD Film Dokumenter"
+
+    def tampil_info(self):
+        print(f"  Jenis         : {self.get_jenis()}")
+        print(f"  Kode Koleksi  : {self._kode_koleksi}")
+        print(f"  Judul         : {self._judul}")
+        print(f"  Thn Terbit    : {self._tahun_terbit}")
+        print(f"  Penerbit      : {self._penerbit}")
+        print(f"  Jenis Film    : {self._jenis_film}")
+        print(f"  Bidang Ilmu   : {self._bidang_ilmu}")
+        print(f"  Durasi        : {self._durasi} menit")
