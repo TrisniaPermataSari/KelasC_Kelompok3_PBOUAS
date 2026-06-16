@@ -1,11 +1,11 @@
-from models import Buku, Majalah, Jurnal, DVDFilmDokumenter
+from models import KoleksiPerpustakaan
 
 
 class Perpustakaan:
     def __init__(self):
         self._koleksi = []
 
-    def tambah_koleksi(self, koleksi):
+    def tambah_koleksi(self, koleksi: KoleksiPerpustakaan):
         self._koleksi.append(koleksi)
 
     def hapus_koleksi(self, kode):
@@ -14,6 +14,9 @@ class Perpustakaan:
                 self._koleksi.remove(item)
                 return True
         return False
+
+    def get_semua_koleksi(self):
+        return self._koleksi
 
     def tampil_semua(self):
         if not self._koleksi:
